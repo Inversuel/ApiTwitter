@@ -1,0 +1,33 @@
+﻿
+<div class="jumbotron">
+    <h1>Twitter Api </h1>
+    <p class="lead">Get tweets from DNVGL</p>
+</div>
+
+<div class="chooseTwitter">
+        @Html.Label("Choose twitter account : ", new { @class = "control-label" })
+        @Html.DropDownList("Choose twitter account", (IEnumerable
+            <SelectListItem>)ViewBag.TwitterName, new { @class = "drpName form-control" })
+        @Html.Label("Count feeds", new { @class = "control-label" })
+        @Html.Editor("Count", new { htmlAttributes = new { @class = "countFeeds form-control", @type = "number", @min = "1", @max = "199" } })
+        @Html.Label("Hastag to check", new { @class = "control-label" })
+        @Html.Editor("Hastag", new { htmlAttributes = new { @class = "hastagFeeds form-control"} })
+        <input href="#" id="btnGetTweets" type="button" value="Get tweets" class="btn btn-default" data-dismiss="alert" />
+</div>
+
+<div class="renderHere">
+
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+    $("#btnGetTweets").click(function () {
+        var nameOfDNVGL = $('.drpName option:selected').text();
+        var count = $('.countFeeds').val().toString();
+        var hastag = $('.hastagFeeds').val().toString();
+
+        var targetUrl = '/Home/getTweetsByModel' + '?nameOfDNVGL=' + nameOfDNVGL + '&count=' + count + '&hastag=' + hastag;
+            $('.renderHere').load(targetUrl);
+    });
+
+</script>

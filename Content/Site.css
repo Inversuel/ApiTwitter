@@ -1,0 +1,44 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 180px;
+}
+
+.control-label{
+    margin-top:8px;
+}
+.card {
+    margin-top: 20px;
+    background-color: #F0F4F4;
+}
+.form-control{
+    max-width:200px
+}
+.card-img-top {
+    max-height: 250px;
+    max-width: 1200px;
+}
+
+.chooseTwitter {
+    display: flex;
+    justify-content: space-evenly;
+}
